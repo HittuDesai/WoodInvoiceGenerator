@@ -1,0 +1,45 @@
+tr {
+  width: 100%;
+}
+
+th {
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+}
+
+td,
+th {
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+td#woodType {
+  background-color: brown;
+  color: yellow;
+}
+
+td#thickness {
+  background-color: hsl(0, 0%, 40%);
+}
+
+td#length {
+  background-color: hsl(0, 0%, 50%);
+}
+td#breadth {
+  background-color: hsl(0, 0%, 60%);
+}
+td#quantity {
+  background-color: hsl(0, 0%, 70%);
+}
+
+td#remove button {
+  background-color: lightcoral;
+  width: 100%;
+  border: none;
+}
+td#remove button:hover {
+  background-color: red;
+}

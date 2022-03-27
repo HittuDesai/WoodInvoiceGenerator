@@ -1,0 +1,30 @@
+form {
+  max-width: 150px;
+}
+
+label {
+  width: 100%;
+}
+
+input {
+  width: 50px;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+input#addWoodToCart {
+  width: 100px;
+}
+
+label#typeOfWood {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

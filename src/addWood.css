@@ -1,0 +1,61 @@
+div.actionButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+div.input {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+}
+
+button.addWood,
+input#addWoodToCart {
+  background-color: hsl(0, 50%, 33%);
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+button.addWood:hover {
+  background-color: hsl(0, 50%, 20%);
+
+  color: white;
+  border: 5px solid white;
+}
+
+input#addWoodToCart {
+  background-color: hsl(120, 100%, 20%);
+  color: white;
+  border: none;
+}
+
+input#addWoodToCart:hover {
+  background-color: white;
+  color: hsl(120, 100%, 20%);
+  border: 5px solid hsl(120, 100%, 20%);
+}
+
+p.failure,
+p.success {
+  max-width: 200px;
+  background-color: white;
+  color: red;
+  text-transform: uppercase;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+p.success {
+  color: green;
+}
