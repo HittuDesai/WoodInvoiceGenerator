@@ -5,29 +5,28 @@ import {CartViewContext} from "./CartViewContext";
 import {CartContext} from "./CartContext"
 import CartView from "./CartView";
 
-function convertArrayToExcel(array) {}
-
-function convertTableToArray() {
-  var finalArray = [];
-  let rows = document.querySelectorAll("tr");
-  if (rows.length === 0 || rows.length === 1) {
-    alert("You need to add at least one item to the cart");
-  } else {
-    for (let i = 1; i < rows.length; i++) {
-      let rowContent = rows[i].innerText.split("\t");
-      rowContent.pop();
-      rowContent.unshift(i);
-      finalArray.push(rowContent);
-    }
-  }
-  console.log(finalArray);
-  convertArrayToExcel(finalArray);
-}
-
 export default function App() {
   const [showForm, setShowForm] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
+  
+  function convertArrayToExcel() {
+    console.log(cart);
+    var CSV = "";
+    cart.forEach(row => {
+      for(var column in row) {
+        CSV += column + ',';
+      }
+      CSV += "\r\n";
+    });
+    CSV = "data:application/csv," + encodeURIComponent(CSV);
+    var x = document.createElement("A");
+    x.setAttribute("href", CSV);
+    x.setAttribute("download","order.csv");
+    document.body.appendChild(x);
+    x.click();
+  }
+
   return(
       <main className="container">
       <section className="left">
@@ -41,7 +40,7 @@ export default function App() {
       <div className="cart">
         <CartContext.Provider value={{cart, setCart}}><CartViewContext.Provider value={{showCart, setShowCart}}><CartView /></CartViewContext.Provider></CartContext.Provider>
       </div>
-      <button className="placeQuote btn" onClick={convertTableToArray}>
+      <button className="placeQuote btn" onClick={convertArrayToExcel}>
           Request Quote
       </button>
       </section>
